@@ -109,9 +109,9 @@ export default function Footer() {
                 </button>
               </div>
               <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
-                Bitters chicharrones fanny pack
+                Você receberá um email com novidades em primeira mão
                 <br className="lg:block hidden" />
-                waistcoat green juice
+                Caso não queira receber mais clique aqui
               </p>
             </div>
           </div>
