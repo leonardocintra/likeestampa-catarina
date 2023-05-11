@@ -11,7 +11,12 @@ export default async function Home() {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {products ? (
-              products.map((product: any) => <ProductCard product={product} />)
+              products.map((product: IProduct) => (
+                <ProductCard
+                  key={`product-id-key-${product.id}`}
+                  product={product}
+                />
+              ))
             ) : (
               <h1>Carregando produto</h1>
             )}

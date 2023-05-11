@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { IProduct } from "../../interfaces/IProduct";
 
 type ProductCardProps = {
@@ -6,12 +7,9 @@ type ProductCardProps = {
 
 export default function ProductCard(props: ProductCardProps) {
   return (
-    <div
-      className="lg:w-1/4 md:w-1/2 p-4 w-full"
-      id={`product-id-${props.product.id}`}
-    >
+    <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
       <a className="block relative h-48 rounded overflow-hidden">
-        <img
+        <Image
           alt="ecommerce"
           className="object-cover object-center w-full h-full block"
           src="https://dummyimage.com/421x261"
