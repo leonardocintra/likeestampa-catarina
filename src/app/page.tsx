@@ -1,9 +1,9 @@
-import getData from "./api/catarina";
+import catarinaGetData from "./api/catarina";
 import ProductCard from "./components/catalog/ProductCard";
 import { IProduct } from "./interfaces/IProduct";
 
 export default async function Home() {
-  const products = await getData<IProduct[]>("/v1/catalogs/products");
+  const products = await catarinaGetData<IProduct[]>("/v1/catalogs/products");
 
   return (
     <main>
@@ -18,7 +18,7 @@ export default async function Home() {
                 />
               ))
             ) : (
-              <h1>Carregando produto</h1>
+              <h1>Carregando produtos ... </h1>
             )}
           </div>
         </div>

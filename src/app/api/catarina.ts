@@ -1,6 +1,6 @@
 const BASE_URL = process.env.CATARINA_API_URL;
 
-export default async function getData<T>(url: string) {
+export default async function catarinaGetData<T>(url: string) {
   const res = await fetch(`${BASE_URL}${url}`, {
     next: {
       revalidate: 10,
@@ -11,5 +11,10 @@ export default async function getData<T>(url: string) {
       Authorization: `Bearer ${process.env.CATARINA_API_TOKEN}`,
     },
   });
-  return res.json();
+
+  if (res.status === 200) {
+    return res.json();
+  } else {
+    console.error(res.status);
+  }
 }
