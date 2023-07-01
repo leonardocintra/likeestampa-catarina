@@ -22,6 +22,7 @@ export default function ProductDetailVariations(
                 Array.isArray(v.values) && v.values.length > 0 ? (
                   v.values.map((vv) => (
                     <button
+                      key={vv.id}
                       className={`border-2 border-gray-300 ml-1 ${
                         vv.color
                           ? `bg-[${vv.color.toLowerCase()}]`
@@ -30,7 +31,7 @@ export default function ProductDetailVariations(
                     ></button>
                   ))
                 ) : (
-                  <p>Não informado</p>
+                  <p key={v.id}>Não informado</p>
                 )
               )}
           </div>
@@ -44,9 +45,11 @@ export default function ProductDetailVariations(
                   )
                   .map((v) =>
                     Array.isArray(v.values) && v.values.length > 0 ? (
-                      v.values.map((vv) => <option>{vv.value}</option>)
+                      v.values.map((vv) => (
+                        <option key={v.id}>{vv.value}</option>
+                      ))
                     ) : (
-                      <p>Não informado</p>
+                      <p key={v.id}>Não informado</p>
                     )
                   )}
               </select>
