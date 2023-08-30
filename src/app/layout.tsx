@@ -17,16 +17,16 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const categories = await catarinaGetData<ICategory[]>(
-    "/v1/catalogs/categories"
-  );
+  // const categories = await catarinaGetData<ICategory[]>(
+  //   "/v1/catalogs/categories"
+  // );
 
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <Header categories={categories} />
+        {/* <Header categories={categories} /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

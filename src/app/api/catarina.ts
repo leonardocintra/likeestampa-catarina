@@ -3,7 +3,7 @@ const BASE_URL = process.env.CATARINA_API_URL;
 export default async function catarinaGetData<T>(url: string) {
   const res = await fetch(`${BASE_URL}${url}`, {
     next: {
-      revalidate: 10,
+      revalidate: 0,
     },
     headers: {
       "Content-Type": "application/json",

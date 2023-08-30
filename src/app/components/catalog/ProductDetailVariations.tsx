@@ -10,6 +10,8 @@ export default function ProductDetailVariations(
 ) {
   const product = props.product;
 
+  console.log(product);
+
   return (
     <>
       {product.variations.length > 0 ? (
