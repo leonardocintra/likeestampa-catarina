@@ -1,32 +1,27 @@
-import catarinaGetData from "./api/catarina";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import "./globals.css";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ICategory } from "./interfaces/ICategory";
+import "./globals.css";
+import Header from "@/components/custom/header";
+import Footer from "@/components/custom/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Like Estampa",
-  description: "Meu hobbies destacados",
+  description: "Suas paixões estampadas",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  // const categories = await catarinaGetData<ICategory[]>(
-  //   "/v1/catalogs/categories"
-  // );
-
+}>) {
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        {/* <Header categories={categories} /> */}
+        <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
