@@ -3,6 +3,7 @@
  * @see https://v0.dev/t/pBTEt357dY9
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,11 +11,11 @@ export default function Footer() {
     <footer className="w-full py-6">
       <div className="container flex flex-col items-center gap-4 px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <img
+          <Image
             alt="Logo"
             className="rounded-lg"
             height="36"
-            src="/placeholder.svg"
+            src="/logo.png"
             style={{
               aspectRatio: "36/36",
               objectFit: "cover",
