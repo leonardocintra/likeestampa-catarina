@@ -5,23 +5,15 @@
  */
 import Image from "next/image";
 import Link from "next/link";
+import LogoLikeEstampa from "./logo";
 
 export default function Footer() {
   return (
     <footer className="w-full py-6">
       <div className="container flex flex-col items-center gap-4 px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <Image
-            alt="Logo"
-            className="rounded-lg"
-            height="36"
-            src="/logo.png"
-            style={{
-              aspectRatio: "36/36",
-              objectFit: "cover",
-            }}
-            width="36"
-          />
+          <LogoLikeEstampa />
+
           <div className="grid gap-1 text-sm">
             <p className="font-semibold">Like Estampa</p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
