@@ -1,18 +1,21 @@
 import CardItem from "@/components/custom/card-item";
 import { Button } from "@/components/ui/button";
-import { getCateories } from "@/data/strapi/entity/categories";
+import { getProductTypes } from "@/data/strapi/entity/product-type";
+import { IProductType } from "@/interfaces/IProductType";
 
 export default async function Home() {
-  const categoriesData = await getCateories();
+  const productTypes = await getProductTypes();
 
   return (
     <main>
-      <div className="flex flex-col text-center p-4">
-        {categoriesData.data.map((category: any) => (
-          <div key={category.id}>
-            <h2>{category.description}</h2>
-          </div>
-        ))}
+      <div className="flex justify-center space-x-2 my-3">
+        {productTypes.data
+          .filter((t: IProductType) => t.active === true)
+          .map((type: IProductType) => (
+            <Button size={"sm"} key={type.id}>
+              {type.description}
+            </Button>
+          ))}
       </div>
 
       <div className="container grid sm:grid-cols-4 gap-2">
