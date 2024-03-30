@@ -24,11 +24,11 @@ export default async function Home() {
           ))}
       </div>
 
-      {/* <div className="container grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+      <div className="container grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {products.map((product: IProduct) => (
           <CardItem key={product.id} product={product} />
         ))}
-      </div> */}
+      </div>
     </main>
   );
 }
