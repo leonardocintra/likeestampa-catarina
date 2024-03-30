@@ -26,7 +26,10 @@ export default async function Home() {
 
       <div className="container grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {products.map((product: IProduct) => (
-          <CardItem key={product.id} product={product} />
+          // <CardItem key={product.id} product={product} />
+          <div key={product.id}>
+            <h2>Teste {product.name}</h2>
+          </div>
         ))}
       </div>
     </main>
