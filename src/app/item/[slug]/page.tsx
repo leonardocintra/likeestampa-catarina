@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function Component() {
   return (
@@ -140,7 +141,7 @@ export default function Component() {
           </div>
         </div>
         <div className="grid gap-4 md:gap-6">
-          <img
+          <Image
             alt="Product Image"
             className="aspect-square object-cover border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
             height={600}
@@ -149,7 +150,7 @@ export default function Component() {
           />
           <div className="hidden md:flex gap-4 items-start">
             <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <img
+              <Image
                 alt="Preview thumbnail"
                 className="aspect-square object-cover"
                 height={100}
@@ -159,7 +160,7 @@ export default function Component() {
               <span className="sr-only">View Image 1</span>
             </button>
             <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <img
+              <Image
                 alt="Preview thumbnail"
                 className="aspect-square object-cover"
                 height={100}
@@ -169,7 +170,7 @@ export default function Component() {
               <span className="sr-only">View Image 2</span>
             </button>
             <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <img
+              <Image
                 alt="Preview thumbnail"
                 className="aspect-square object-cover"
                 height={100}
@@ -179,7 +180,7 @@ export default function Component() {
               <span className="sr-only">View Image 3</span>
             </button>
             <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <img
+              <Image
                 alt="Preview thumbnail"
                 className="aspect-square object-cover"
                 height={100}
@@ -199,17 +200,22 @@ export default function Component() {
           <CardContent>
             <div className="grid gap-2">
               <p>
-                The Acme Prism T-Shirt is designed to meet the highest standards
-                of quality and style. The fabric is carefully selected to
-                provide a comfortable and flattering fit, making it suitable for
-                all-day wear.
+                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                descrição aqui, colocar a descrição aqui,Colocar a descrição
+                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
+                a descrição aqui,Colocar a descrição aqui, colocar a descrição
+                aqui,Colocar a descrição aqui, colocar a descrição aqui,Colocar
+                a descrição aqui, colocar a descrição aqui,Colocar a descrição
+                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
+                a descrição aqui,
               </p>
               <p>
-                The shirt's unique prism pattern is created using advanced
-                printing techniques, ensuring that the design is vibrant and
-                long-lasting. Whether you're dressing up for a casual day out or
-                adding a pop of color to your wardrobe, the Acme Prism T-Shirt
-                is the perfect choice.
+                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                descrição aqui, colocar a descrição aqui,Colocar a descrição
+                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
+                a descrição aqui,Colocar a descrição aqui, colocar a descrição
+                aqui,Colocar a descrição aqui, colocar a descrição aqui,Colocar
+                a descrição aqui, colocar a descrição aqui,
               </p>
             </div>
           </CardContent>
@@ -234,15 +240,18 @@ export default function Component() {
               </p>
               <p>
                 <strong>Shipping fees:</strong>
-                Shipping fees are calculated based on the weight of the items in
-                your order and the shipping method chosen. You can view the
-                shipping fees during the checkout process before making a
-                payment.
+                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                descrição aqui, colocar a descrição aqui,Colocar a descrição
+                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
+                a descrição aqui,Colocar a descrição aqui, colocar a descrição
+                aqui,Colocar a descrição aqui, colocar a descrição aqui,
               </p>
               <p>
-                If you have any questions about shipping or need assistance with
-                tracking your order, please contact our customer service team,
-                and we'll be happy to help.
+                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                descrição aqui, colocar a descrição aqui,Colocar a descrição
+                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
+                a descrição aqui,Colocar a descrição aqui, colocar a descrição
+                aqui,Colocar a descrição aqui, colocar a descrição aqui,
               </p>
             </div>
           </CardContent>
@@ -269,11 +278,12 @@ export default function Component() {
                 </div>
                 <div className="grid gap-2 text-sm leading-loose">
                   <p>
-                    I love the design of this shirt. The prism pattern is really
-                    eye-catching and adds a unique touch to my outfit. The fit
-                    is perfect, and the fabric is soft and comfortable to wear
-                    all day. I've been getting compliments on this shirt, and
-                    I'm really happy with my purchase.
+                    Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                    descrição aqui, colocar a descrição aqui,Colocar a descrição
+                    aqui, colocar a descrição aqui,Colocar a descrição aqui,
+                    colocar a descrição aqui,Colocar a descrição aqui, colocar a
+                    descrição aqui,Colocar a descrição aqui, colocar a descrição
+                    aqui,
                   </p>
                 </div>
               </div>
@@ -295,12 +305,14 @@ export default function Component() {
                 </div>
                 <div className="grid gap-2 text-sm leading-loose">
                   <p>
-                    I was excited to receive this shirt, but I was disappointed
-                    with the quality. The fabric feels cheap, and the printing
-                    of the design looks faded and pixelated. It doesn't look as
-                    vibrant as the images online. I also found that the shirt
-                    runs small, and the fit was not flattering. Overall, I
-                    wouldn't recommend this shirt based on my experience.
+                    Colocar a descrição aqui, colocar a descrição aqui,Colocar a
+                    descrição aqui, colocar a descrição aqui,Colocar a descrição
+                    aqui, colocar a descrição aqui,Colocar a descrição aqui,
+                    colocar a descrição aqui,Colocar a descrição aqui, colocar a
+                    descrição aqui,Colocar a descrição aqui, colocar a descrição
+                    aqui,Colocar a descrição aqui, colocar a descrição
+                    aqui,Colocar a descrição aqui, colocar a descrição
+                    aqui,Colocar a descrição aqui, colocar a descrição aqui,
                   </p>
                 </div>
               </div>

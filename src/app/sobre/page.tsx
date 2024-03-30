@@ -72,7 +72,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-2 items-stretch justify-center gap-6 md:gap-10 lg:gap-12">
             <div className="flex flex-col gap-2">
-              <img
+              <Image
                 alt="Portrait"
                 className="mx-auto rounded-full overflow-hidden aspect-[1/1] object-cover object-center"
                 height="250"
@@ -89,7 +89,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <img
+              <Image
                 alt="Portrait"
                 className="mx-auto rounded-full overflow-hidden aspect-[1/1] object-cover object-center"
                 height="250"
@@ -123,7 +123,7 @@ export default function AboutPage() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     alt="Portrait"
                     className="rounded-full overflow-hidden aspect-[1/1] object-cover object-center"
                     height="40"
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     alt="Portrait"
                     className="rounded-full overflow-hidden aspect-[1/1] object-cover object-center"
                     height="40"
@@ -170,7 +170,7 @@ export default function AboutPage() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     alt="Portrait"
                     className="rounded-full overflow-hidden aspect-[1/1] object-cover object-center"
                     height="40"
