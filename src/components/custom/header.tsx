@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="ml-auto flex items-center gap-6 text-sm font-medium">
         <Link
           className="flex items-center gap-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-          href="#"
+          href="/"
         >
           <HomeIcon className="w-4 h-4" />
           Home

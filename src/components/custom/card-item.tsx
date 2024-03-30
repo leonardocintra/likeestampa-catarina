@@ -17,16 +17,16 @@ export default function CardItem({ product }: CardItemProps) {
       </div>
 
       <CardContent className="p-4">
-        <div className="grid gap-1.5">
-          <h3 className="text-sm font-medium leading-5">{product.name}</h3>
+        <div className="grid gap-1.5 text-center">
+          <h3 className="text-2xl text-slate-700 font-medium leading-5">{product.name}</h3>
 
-          <Badge>{product.sub_category.description}</Badge>
+          <Badge className="justify-center" >{product.sub_category.description}</Badge>
 
-          <p className="text-sm font-medium">R$ {product.basePrice}</p>
+          <p className="text-sm font-medium text-slate-700">R$ {product.basePrice}</p>
         </div>
       </CardContent>
       <CardFooter className="flex justify-center p-4">
-        <Button className="w-full" variant="default">
+        <Button className="w-full" variant="ghost">
           Adicionar ao carrinho
         </Button>
       </CardFooter>
