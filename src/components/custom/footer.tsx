@@ -36,7 +36,7 @@ export default function Footer() {
           </Link>
           <Link
             className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-gray-50"
-            href="#"
+            href="/sobre"
           >
             Sobre nos
           </Link>
