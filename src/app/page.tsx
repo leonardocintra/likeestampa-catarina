@@ -6,17 +6,16 @@ import { IProduct } from "@/interfaces/IProduct";
 import { IProductType } from "@/interfaces/IProductType";
 
 export default async function Home() {
+
   const productTypesFetched = await getProductTypes();
   const productsFetched = await getProducts();
 
   const productTypes: IProductType[] = productTypesFetched.data;
   const products: IProduct[] = productsFetched.data;
 
-  console.log(productsFetched.data)
-
   return (
     <main>
-      <div className="flex justify-center space-x-2 my-3">
+      {/* <div className="flex justify-center space-x-2 my-3">
         {productTypes
           .filter((type: IProductType) => type.active === true)
           .map((type: IProductType) => (
@@ -30,7 +29,7 @@ export default async function Home() {
         {products.map((product: IProduct) => (
           <CardItem key={product.id} product={product} />
         ))}
-      </div>
+      </div> */}
     </main>
   );
 }
