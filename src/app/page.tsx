@@ -6,7 +6,6 @@ import { IProduct } from "@/interfaces/IProduct";
 import { IProductType } from "@/interfaces/IProductType";
 
 export default async function Home() {
-
   const productTypesFetched = await getProductTypes();
   const productsFetched = await getProducts();
 
@@ -15,7 +14,7 @@ export default async function Home() {
 
   return (
     <main>
-      {/* <div className="flex justify-center space-x-2 my-3">
+      <div className="flex justify-center space-x-2 my-3">
         {productTypes
           .filter((type: IProductType) => type.active === true)
           .map((type: IProductType) => (
@@ -25,7 +24,7 @@ export default async function Home() {
           ))}
       </div>
 
-      <div className="container grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+      {/* <div className="container grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {products.map((product: IProduct) => (
           <CardItem key={product.id} product={product} />
         ))}
