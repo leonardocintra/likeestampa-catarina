@@ -1,5 +1,4 @@
 import { flattenAttributes, getStrapiURL } from "@/lib/utils";
-import qs from "qs";
 
 export const strapiBaseUrl = getStrapiURL();
 
