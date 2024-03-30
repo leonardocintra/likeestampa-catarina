@@ -1,8 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/ukiDHdCqYUP
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { Label } from "@/components/ui/label";
 import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
 import {
@@ -16,8 +11,28 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import Image from "next/image";
+import { getProductBySlug } from "@/data/strapi/entity/products";
+import { IProduct } from "@/interfaces/IProduct";
+import { redirect } from "next/navigation";
+import ItemDetailThumbnailImages from "@/components/custom/item/item-detail-thumbnail-images";
+import { getStrapiURL } from "@/lib/utils";
 
-export default function Component() {
+const baseUrl = getStrapiURL();
+
+export default async function ItemDetailPage({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const productData = await getProductBySlug(slug);
+  const products: IProduct[] = productData.data;
+
+  if (products.length === 0) {
+    redirect("/");
+  }
+
+  const product: IProduct = products[0];
+
   return (
     <div
       key="1"
@@ -25,7 +40,7 @@ export default function Component() {
     >
       <div className="grid md:grid-cols-2 md:gap-6 items-start">
         <div className="grid gap-4 md:gap-6">
-          <h1 className="text-2xl lg:text-4xl font-bold">Nome produto</h1>
+          <h1 className="text-2xl lg:text-4xl font-bold">{product.name}</h1>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-0.5">
               <StarIcon className="w-5 h-5 fill-primary" />
@@ -36,8 +51,9 @@ export default function Component() {
             </div>
           </div>
           <div>
-            <p>100% Algodão e mais alguma coisa para colocar aqui</p>
+            <p>100 % Algodão</p>
           </div>
+
           <div className="flex flex-col gap-2 md:flex-row">
             <form className="grid gap-2 md:gap-4 w-full">
               <div className="grid gap-2">
@@ -133,7 +149,7 @@ export default function Component() {
                 </Select>
               </div>
               <Button type="submit" size="lg">
-                Adicionar carrinho
+                Adicionar carrinho | R$ {product.basePrice}
               </Button>
             </form>
             <Separator className="w-full max-h-[24px] md:hidden" />
@@ -145,51 +161,11 @@ export default function Component() {
             alt="Product Image"
             className="aspect-square object-cover border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
             height={600}
-            src="/placeholder.svg"
+            src={`${baseUrl}${product.mocks.data[0].formats.medium.url}`}
             width={600}
           />
-          <div className="hidden md:flex gap-4 items-start">
-            <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <Image
-                alt="Preview thumbnail"
-                className="aspect-square object-cover"
-                height={100}
-                src="/placeholder.svg"
-                width={100}
-              />
-              <span className="sr-only">View Image 1</span>
-            </button>
-            <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <Image
-                alt="Preview thumbnail"
-                className="aspect-square object-cover"
-                height={100}
-                src="/placeholder.svg"
-                width={100}
-              />
-              <span className="sr-only">View Image 2</span>
-            </button>
-            <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <Image
-                alt="Preview thumbnail"
-                className="aspect-square object-cover"
-                height={100}
-                src="/placeholder.svg"
-                width={100}
-              />
-              <span className="sr-only">View Image 3</span>
-            </button>
-            <button className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50">
-              <Image
-                alt="Preview thumbnail"
-                className="aspect-square object-cover"
-                height={100}
-                src="/placeholder.svg"
-                width={100}
-              />
-              <span className="sr-only">View Image 4</span>
-            </button>
-          </div>
+
+          <ItemDetailThumbnailImages mocks={product.mocks} />
         </div>
       </div>
       <div className="grid gap-4">
@@ -199,24 +175,7 @@ export default function Component() {
           </CardHeader>
           <CardContent>
             <div className="grid gap-2">
-              <p>
-                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
-                descrição aqui, colocar a descrição aqui,Colocar a descrição
-                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
-                a descrição aqui,Colocar a descrição aqui, colocar a descrição
-                aqui,Colocar a descrição aqui, colocar a descrição aqui,Colocar
-                a descrição aqui, colocar a descrição aqui,Colocar a descrição
-                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
-                a descrição aqui,
-              </p>
-              <p>
-                Colocar a descrição aqui, colocar a descrição aqui,Colocar a
-                descrição aqui, colocar a descrição aqui,Colocar a descrição
-                aqui, colocar a descrição aqui,Colocar a descrição aqui, colocar
-                a descrição aqui,Colocar a descrição aqui, colocar a descrição
-                aqui,Colocar a descrição aqui, colocar a descrição aqui,Colocar
-                a descrição aqui, colocar a descrição aqui,
-              </p>
+              <p>{product.description}</p>
             </div>
           </CardContent>
         </Card>

@@ -4,10 +4,13 @@ import LogoLikeEstampa from "./logo";
 export default function Header() {
   return (
     <div className="flex h-14 items-center px-4 border-b">
-      <div className="flex items-center gap-1">
-        <LogoLikeEstampa />
-        <span className="text-lg font-bold">Like Estampa</span>
-      </div>
+      <Link href={"/"}>
+        <div className="flex items-center gap-1">
+          <LogoLikeEstampa />
+          <span className="text-lg font-bold">Like Estampa</span>
+        </div>
+      </Link>
+      
       <nav className="ml-auto flex items-center gap-6 text-sm font-medium">
         <Link
           className="flex items-center gap-1.5 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"

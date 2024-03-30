@@ -17,3 +17,25 @@ export async function getProducts() {
 
   return await fetchDataStrapi(url.href);
 }
+
+export async function getProductBySlug(slug: string) {
+  const url = new URL("/api/products", strapiBaseUrl);
+
+  url.search = qs.stringify({
+    populate: {
+      sub_category: {
+        populate: true,
+      },
+      mocks: {
+        populate: true,
+      },
+    },
+    filters: {
+      slug: {
+        $eq: slug,
+      },
+    },
+  });
+
+  return await fetchDataStrapi(url.href);
+}
