@@ -15,8 +15,7 @@ export default function CardItem({ product }: CardItemProps) {
       <CardItemImages mocks={product.mocks} />
       <div className="text-xs text-center text-slate-500 italic">
         <h4>
-          {" "}
-          {"<<"} arraste pros lados {">>"}{" "}
+          {"<<"} arraste pros lados {">>"}
         </h4>
       </div>
 

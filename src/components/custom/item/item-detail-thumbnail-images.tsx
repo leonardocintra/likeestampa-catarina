@@ -10,7 +10,7 @@ const baseUrl = getStrapiURL();
 
 export default function ItemDetailThumbnailImages({ mocks }: ItemDetailImagesPros) {
   return (
-    <div className="hidden md:flex gap-4 items-start">
+    <div className="md:flex gap-4 items-start">
       {mocks.data.map((img) => (
         <button
           key={img.id}

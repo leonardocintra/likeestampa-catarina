@@ -1,3 +1,5 @@
+"use client";
+
 import { IProductImagesMock } from "@/interfaces/IProductImagesMock";
 import { getStrapiURL } from "@/lib/utils";
 import Image from "next/image";
@@ -6,6 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface CardItemImagesProps {
   mocks: IProductImagesMock;
@@ -16,7 +19,13 @@ const baseUrl = getStrapiURL();
 export default function CardItemImages({ mocks }: CardItemImagesProps) {
   return (
     <div className="aspect-w-4 aspect-h-5 overflow-hidden rounded-lg">
-      <Carousel>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+      >
         <CarouselContent>
           {mocks.data.map((img) => (
             <CarouselItem key={img.id}>

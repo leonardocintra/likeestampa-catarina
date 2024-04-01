@@ -1,8 +1,24 @@
+# Like Estampa
+
+### History
+Fundado em 20/04/2021
+
+Por Leonardo Nascimento Cintra e Juliana Rosa Rodrigues Cintra
+
+- Primeira maquina de estampa: 20/04/2021
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+### Backend project
+
+Clone the backend project: https://github.com/leonardocintra/antonio
+
+### Starting the project
+
+Before, run the development server:
 
 ```bash
 npm run dev
@@ -29,8 +45,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Magalucloud
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project uses [MagaluCloud](https://portal.magalu.cloud/)
