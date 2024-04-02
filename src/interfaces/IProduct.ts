@@ -1,4 +1,5 @@
 import { IProductImagesMock } from "./IProductImagesMock";
+import { IProductModel } from "./IProductModel";
 import { ISubCategory } from "./ISubCategory";
 
 export interface IProduct {
@@ -10,4 +11,5 @@ export interface IProduct {
   basePrice: number;
   sub_category: ISubCategory;
   mocks: IProductImagesMock;
+  product_models: IProductModel;
 }

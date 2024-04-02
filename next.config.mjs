@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'likeestampa-strapi.wno48n.easypanel.host'
+        hostname: 'res.cloudinary.com'
       }
     ],
   },

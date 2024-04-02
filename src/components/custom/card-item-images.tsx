@@ -1,7 +1,6 @@
 "use client";
 
 import { IProductImagesMock } from "@/interfaces/IProductImagesMock";
-import { getStrapiURL } from "@/lib/utils";
 import Image from "next/image";
 import {
   Carousel,
@@ -13,8 +12,6 @@ import Autoplay from "embla-carousel-autoplay";
 interface CardItemImagesProps {
   mocks: IProductImagesMock;
 }
-
-const baseUrl = getStrapiURL();
 
 export default function CardItemImages({ mocks }: CardItemImagesProps) {
   return (
@@ -33,7 +30,7 @@ export default function CardItemImages({ mocks }: CardItemImagesProps) {
                 alt={img.alternativeText}
                 className="object-center object-cover"
                 height={500}
-                src={`${baseUrl}${img.formats.medium.url}`}
+                src={`${img.formats.medium.url}`}
                 style={{
                   aspectRatio: "400/500",
                   objectFit: "cover",

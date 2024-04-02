@@ -29,6 +29,16 @@ export async function getProductBySlug(slug: string) {
       mocks: {
         populate: true,
       },
+      product_models: {
+        populate: {
+          product_sizes: {
+            fields: ["id, description", "customerDescription", "slug"],
+          },
+          product_colors: {
+            fields: ["id", "description", "slug", "value"],
+          },
+        },
+      },
     },
     filters: {
       slug: {

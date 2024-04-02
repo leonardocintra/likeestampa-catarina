@@ -1,5 +1,4 @@
 import { Label } from "@/components/ui/label";
-import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
 import {
   SelectValue,
   SelectTrigger,
@@ -10,16 +9,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
-import Image from "next/image";
 import { getProductBySlug } from "@/data/strapi/entity/products";
 import { IProduct } from "@/interfaces/IProduct";
 import { redirect } from "next/navigation";
-import ItemDetailThumbnailImages from "@/components/custom/item/item-detail-thumbnail-images";
-import { getStrapiURL } from "@/lib/utils";
+import ItemDetailProductImages from "@/components/custom/item/item-detail-product-images";
 import StarIcon from "@/components/custom/icons/start";
 import ItemDetailRating from "@/components/custom/item/item-detail-rating";
-
-const baseUrl = getStrapiURL();
+import ItemDetailSizes from "@/components/custom/item/item-detail-sizes";
+import ItemDetailColors from "@/components/custom/item/item-detail-colors";
 
 export default async function ItemDetailPage({
   params: { slug },
@@ -58,81 +55,10 @@ export default async function ItemDetailPage({
 
           <div className="flex flex-col gap-2 md:flex-row">
             <form className="grid gap-2 md:gap-4 w-full">
-              <div className="grid gap-2">
-                <Label className="text-base" htmlFor="color">
-                  Cor
-                </Label>
-                <RadioGroup
-                  className="flex items-center gap-2"
-                  defaultValue="black"
-                  id="color"
-                >
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="color-black"
-                  >
-                    <RadioGroupItem id="color-black" value="black" />
-                    Preto
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="color-white"
-                  >
-                    <RadioGroupItem id="color-white" value="white" />
-                    Branco
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="color-blue"
-                  >
-                    <RadioGroupItem id="color-blue" value="blue" />
-                    Azul
-                  </Label>
-                </RadioGroup>
-              </div>
-              <div className="grid gap-2">
-                <Label className="text-base" htmlFor="size">
-                  Tamanho
-                </Label>
-                <RadioGroup
-                  className="flex items-center gap-2"
-                  defaultValue="m"
-                  id="size"
-                >
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="size-xs"
-                  >
-                    <RadioGroupItem id="size-xs" value="xs" />P
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="size-s"
-                  >
-                    <RadioGroupItem id="size-s" value="s" />M
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="size-m"
-                  >
-                    <RadioGroupItem id="size-m" value="m" />G
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="size-l"
-                  >
-                    <RadioGroupItem id="size-l" value="l" />
-                    GG
-                  </Label>
-                  <Label
-                    className="border cursor-pointer rounded-md p-2 flex items-center gap-2 [&:has(:checked)]:bg-gray-100 dark:[&:has(:checked)]:bg-gray-800"
-                    htmlFor="size-xl"
-                  >
-                    <RadioGroupItem id="size-xl" value="xl" />
-                    XGG
-                  </Label>
-                </RadioGroup>
-              </div>
+              <ItemDetailColors />
+
+              <ItemDetailSizes />
+
               <div className="grid gap-2 md:gap-4">
                 <Label className="text-base" htmlFor="quantity">
                   Quantidade
@@ -158,17 +84,8 @@ export default async function ItemDetailPage({
             <div className="grid gap-4 text-sm leading-loose" />
           </div>
         </div>
-        <div className="grid gap-4 md:gap-6">
-          <Image
-            alt="Product Image"
-            className="aspect-square object-cover border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
-            height={600}
-            src={`${baseUrl}${product.mocks.data[0].formats.medium.url}`}
-            width={600}
-          />
 
-          <ItemDetailThumbnailImages mocks={product.mocks} />
-        </div>
+        <ItemDetailProductImages mocks={product.mocks} />
       </div>
       <div className="grid gap-4">
         <Card>
