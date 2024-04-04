@@ -27,6 +27,7 @@ export default async function ItemDetailPage({
   const products: IProduct[] = productData.data;
 
   if (products.length === 0) {
+    console.log(`Não encontrado o produto ${slug}`);
     redirect("/");
   }
 
